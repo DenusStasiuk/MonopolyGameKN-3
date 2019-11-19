@@ -1,12 +1,10 @@
-﻿using Assets.Scripts;
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class move : MonoBehaviour
 {
-    Gamer gamer1;
-    
     List<Vector3> fields = new List<Vector3>();
     
     void Start()
