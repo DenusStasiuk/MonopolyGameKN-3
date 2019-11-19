@@ -6,20 +6,22 @@ using UnityEngine;
 public class move : MonoBehaviour
 {
     List<Vector3> fields = new List<Vector3>();
-    
+    public static int rand=0;
     void Start()
     {
-        fields.Add(new Vector3(-0.04f, -3.93f));
-        fields.Add(new Vector3(-1.16f, -3.93f));
-        fields.Add(new Vector3(-2.64f, -3.93f));
-        fields.Add(new Vector3(-4.06f, -3.93f));
-        fields.Add(new Vector3(-5.33f, -3.93f));
-        fields.Add(new Vector3(-6.5f, -3.93f));
+        
+        fields.Add(new Vector3(61.7f, 23.5f));
+        fields.Add(new Vector3(60.4f, 23.5f));
+        fields.Add(new Vector3(58.8f, 23.5f));
+        fields.Add(new Vector3(57.2f, 23.5f));
+        fields.Add(new Vector3(56.2f, 23.5f));
+        fields.Add(new Vector3(55.0f, 23.5f));
+        
     }
     void Update()
     {
 
-        Vector3 v = fields[Random.Range(0,5)];
+        Vector3 v = fields[rand];
         transform.position = v;
         
     }

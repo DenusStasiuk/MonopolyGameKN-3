@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class button : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Sprite layer;
+    void OnMouseUpAsButton()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        move.rand = Random.Range(0, 5);
+    } 
 }
