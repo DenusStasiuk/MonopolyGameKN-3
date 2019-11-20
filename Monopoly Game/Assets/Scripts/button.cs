@@ -8,5 +8,6 @@ public class button : MonoBehaviour
     void OnMouseUpAsButton()
     {
         move.rand = Random.Range(0, 5);
+        move.moveFishka();
     } 
 }
