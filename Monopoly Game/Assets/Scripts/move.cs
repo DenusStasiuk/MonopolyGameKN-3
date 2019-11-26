@@ -9,7 +9,8 @@ public class move : MonoBehaviour
     static List<Vector3> fields = new List<Vector3>();
     public static int rand = 0;
     public static int pos = 0;
-    static Vector3 v;
+    public static bool check_move;
+    static Vector3 v = new Vector3(61.7f, 23.5f);
     void Start()
     {
 
@@ -37,16 +38,16 @@ public class move : MonoBehaviour
         fields.Add(new Vector3(61.8f, 28.0f));
         fields.Add(new Vector3(61.8f, 26.45f));
         fields.Add(new Vector3(61.8f, 25f));
-        v = fields[0];
+        //v = fields[0];
 
     }
     void Update()
     {
 
         transform.position = v;
-        if (v == fields[1] || v == fields[2] || v == fields[3] || v == fields[4] || v == fields[5] || v == fields[6])
+        if ( check_move &&( v == fields[1] || v == fields[2] || v == fields[3] || v == fields[4] || v == fields[5] || v == fields[6]))
         {
-            
+            check_move = false;
             SceneManager.LoadScene(1);
             //Application.LoadLevel("сhooseAnswear");
         }

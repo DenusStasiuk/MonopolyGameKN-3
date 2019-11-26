@@ -9,5 +9,6 @@ public class button : MonoBehaviour
     {
         move.rand = Random.Range(1, 6);
         move.moveFishka();
+        move.check_move = true;
     } 
 }
