@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class move : MonoBehaviour
 {
@@ -43,6 +44,12 @@ public class move : MonoBehaviour
     {
 
         transform.position = v;
+        if (v == fields[1] || v == fields[2] || v == fields[3] || v == fields[4] || v == fields[5] || v == fields[6])
+        {
+            
+            SceneManager.LoadScene(1);
+            //Application.LoadLevel("сhooseAnswear");
+        }
 
 
     }

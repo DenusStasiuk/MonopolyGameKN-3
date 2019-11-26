@@ -7,7 +7,7 @@ public class button : MonoBehaviour
     public Sprite layer;
     void OnMouseUpAsButton()
     {
-        move.rand = Random.Range(0, 5);
+        move.rand = Random.Range(1, 6);
         move.moveFishka();
     } 
 }
