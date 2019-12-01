@@ -45,7 +45,44 @@ public class move : MonoBehaviour
     {
 
         transform.position = v;
-        if ( check_move &&( v == fields[1] || v == fields[2] || v == fields[3] || v == fields[4] || v == fields[5] || v == fields[6]))
+        if (v == fields[1] || v == fields[8] || v == fields[17] || v == fields[19])
+        {
+            showQuestion.nextQuestion = 1;
+        }
+        else if (v == fields[2] || v == fields[3] || v == fields[13] || v == fields[21])
+        {
+            showQuestion.nextQuestion = 2;
+        }
+        else if (v == fields[5] || v == fields[7] || v == fields[10] || v == fields[16])
+        {
+            showQuestion.nextQuestion = 3;
+        }
+        else if (v == fields[11] || v == fields[14] || v == fields[22] || v == fields[23])
+        {
+            showQuestion.nextQuestion = 4;
+        }
+
+        bool checkFields()
+        {
+            foreach (Vector3 t in fields)
+            {
+                if (t == v)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        if ( check_move &&
+            ( v != fields[0] 
+            && v!=fields[4] 
+            && v != fields[6] 
+            && v != fields[9] 
+            && v != fields[12] 
+            && v != fields[15] 
+            && v != fields[18] 
+            && v != fields[20]))
         {
             check_move = false;
             SceneManager.LoadScene(1);
