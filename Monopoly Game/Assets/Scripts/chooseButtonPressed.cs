@@ -16,23 +16,24 @@ public class chooseButtonPressed : MonoBehaviour
             {
                 scoreUpdate.points++;
             }
-             SceneManager.LoadScene(0);
 
-         }
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
+
+        }
          else if (button.name.Equals("choose_button2")) {
             if (showQuestion.checkCorectAnswear(1))
             {
                 scoreUpdate.points++;
             }
-            buttonNum = 2; SceneManager.LoadScene(0);
-         }
+            buttonNum = 2; SceneManager.LoadScene(0, LoadSceneMode.Single);
+        }
          else if (button.name.Equals("choose_button3")) {
             if (showQuestion.checkCorectAnswear(2))
             {
                 scoreUpdate.points++;
             }
-            buttonNum = 3; SceneManager.LoadScene(0);
-         }
+            buttonNum = 3; SceneManager.LoadScene(0, LoadSceneMode.Single);
+        }
          
         //scoreUpdate.points++;
         //SceneManager.LoadScene(0);

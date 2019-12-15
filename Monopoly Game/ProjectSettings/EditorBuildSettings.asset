@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/chooseAnswear.unity
     guid: 7295885df77ee7b4591ad47285a6be83
+  - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: d5fa63c628f391346be74ca3b48fc8f0
   m_configObjects: {}
