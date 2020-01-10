@@ -11,14 +11,14 @@ public class move : MonoBehaviour
     public static int pos1 = 0;
     public static int rand2 = 0;
     public static int pos2 = 0;
-    public static bool check_move1;
-    public static bool check_move2;
+    public static bool check_move1=false;
+    public static bool check_move2=false;
 
     public GameObject fishka;
     public GameObject fishkaBlack;
     public static int nextFishka=1;
-    static Vector3 b = new Vector3(61.5f, 23.5f);
-    static Vector3  w = new Vector3(61.9f, 23.5f);
+    static Vector3 b = new Vector3(61.9f, 23.5f);
+    static Vector3  w = new Vector3(61.5f, 23.5f);
     
     void Start()
     {
@@ -51,6 +51,7 @@ public class move : MonoBehaviour
 
     }
     static bool stop = true;
+    //float step = 0.8f * Time.deltaTime;
 
     void Update()
     {
@@ -60,12 +61,13 @@ public class move : MonoBehaviour
            
                 //transform.position = v;
                 if (w == fishka.transform.position) { stop = false; }
-                if (fishka.transform.position != w && !check_move1) { fishka.transform.position = w; }
-                if (fishka.transform.position != w)
+                if (fishka.transform.position != w && !check_move1) { fishka.transform.position = w; Debug.Log("move1_63"); }
+                if (fishka.transform.position != w && check_move1)
                 {
                     transform.position = Vector3.MoveTowards(fishka.transform.position, w, step);
-                  
-                }
+            Debug.Log("move1_67");
+
+        }
 
 
                 if (w == fields[1] || w == fields[8] || w == fields[17] || w == fields[19])
@@ -98,6 +100,20 @@ public class move : MonoBehaviour
                     check_move1 = false;
             SceneManager.LoadScene(1,LoadSceneMode.Single);
             //Application.LoadLevel("сhooseAnswear");
+                }
+
+                if(fishka.transform.position == w && check_move1 &&
+                    (w == fields[0]
+                    || w == fields[4]
+                    || w == fields[6]
+                    || w == fields[9]
+                    || w == fields[12]
+                    || w == fields[15]
+                    || w == fields[18]
+                    || w == fields[20]))
+        {
+            check_move1 = false;
+            SceneManager.LoadScene(3, LoadSceneMode.Single);
         }
                 
           
@@ -106,12 +122,13 @@ public class move : MonoBehaviour
             
             if (b == fishkaBlack.transform.position) { stop = false; }
             if (fishkaBlack.transform.position != b && !check_move2) { fishkaBlack.transform.position = b;
-            }
-            if (fishkaBlack.transform.position != b)
+            Debug.Log("move2_124");
+        }
+            if (fishkaBlack.transform.position != b && check_move2)
             {
                 fishkaBlack.transform.position = Vector3.MoveTowards(fishkaBlack.transform.position, b, step);
-                
-            }
+            Debug.Log("move2_129");
+        }
 
 
             if (b == fields[1] || b == fields[8] || b == fields[17] || b == fields[19])
@@ -146,6 +163,21 @@ public class move : MonoBehaviour
 
             //SceneManager.SetActiveScene(SceneManager.GetSceneByName("chooseAnswear"));
             //Application.LoadLevel("сhooseAnswear");
+            }
+
+            if(fishkaBlack.transform.position == b && check_move2 &&
+                (b == fields[0]
+                
+                ||b == fields[4]
+                || b == fields[6]
+                || b == fields[9]
+                || b == fields[12]
+                || b == fields[15]
+                || b == fields[18]
+                || b == fields[20]))
+        {
+            check_move2 = false;
+            SceneManager.LoadScene(3, LoadSceneMode.Single);
         }
             
 
@@ -160,6 +192,7 @@ public class move : MonoBehaviour
                 w = fields[(rand1 + pos1) - fields.Count];
                 //transform.position = v;
                 pos1 = (rand1 + pos1) - fields.Count;
+                
             }
             else if ((rand1 + pos1) < fields.Count)
             {

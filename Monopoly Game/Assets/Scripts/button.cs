@@ -13,13 +13,18 @@ public class button : MonoBehaviour
         //else { move.nextFishka = 1; }
         if (move.nextFishka == 1) {
         move.rand1 = Random.Range(1, 6);
+        move.check_move1 = true;
+
         move.moveFishka();
-        move.check_move1 = true; }
+            //move.nextFishka =2;
+         }
         if (move.nextFishka == 2)
         {
             move.rand2 = Random.Range(1, 6);
-            move.moveFishka();
             move.check_move2 = true;
+            move.moveFishka();
+            //move.nextFishka = 1;
+            
         }
         
     } 

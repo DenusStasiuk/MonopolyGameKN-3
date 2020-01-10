@@ -72,8 +72,8 @@ public class showQuestion : MonoBehaviour
         if(nextQuestion ==1)
         {
             if (button == qBlue[nextB].corectAnswear) {
-                if (nextB+1 > qBlue.Count) { nextB = 0; }
-                else if (nextB + 1 <= qBlue.Count) { nextB++; }
+                if (nextB+1 > qBlue.Count - 1) { nextB = 0; }
+                else if (nextB + 1 <= qBlue.Count - 1) { nextB++; }
                 return true;
             }
         }
@@ -81,8 +81,8 @@ public class showQuestion : MonoBehaviour
         {
             if (button == qRed[nextR].corectAnswear)
             {
-                if(nextR+1 > qRed.Count) { nextR = 0; }
-                else if(nextR+1 <= qRed.Count) { nextR++; }
+                if(nextR+1 > qRed.Count - 1) { nextR = 0; }
+                else if(nextR+1 <= qRed.Count-1) { nextR++; }
                 return true;
             }
         }
@@ -90,8 +90,8 @@ public class showQuestion : MonoBehaviour
         {
             if(button== qGreen[nextG].corectAnswear)
             {
-                if(nextG+1 > qGreen.Count) { nextG = 0; }
-                else if(nextG+1 <= qGreen.Count) { nextG++; }
+                if(nextG+1 > qGreen.Count-1) { nextG = 0; }
+                else if(nextG+1 <= qGreen.Count-1) { nextG++; }
                 return true;
             }
         }
@@ -99,8 +99,8 @@ public class showQuestion : MonoBehaviour
         {
             if (button == qYelow[nextY].corectAnswear)
             {
-                if(nextY+1 > qYelow.Count) { nextY = 0; }
-                else if(nextY+1 <= qYelow.Count) { nextY++; }
+                if(nextY+1 > qYelow.Count-1) { nextY = 0; }
+                else if(nextY+1 <= qYelow.Count-1) { nextY++; }
                 return true;
             }
         }
