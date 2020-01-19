@@ -15,6 +15,14 @@ public class ShowRandomNumbers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        randNum.text ="Значення на ігровому кубику: " + move.rand1.ToString() +"    "+move.rand2.ToString();
+        if (move.nextFishka == 1)
+        {
+            randNum.text = "Значення на ігровому кубику: " + move.rand1.ToString();
+        }
+        else if (move.nextFishka == 2)
+        {
+            randNum.text = "Значення на ігровому кубику: " + move.rand2.ToString();
+        }
+        //randNum.text ="Значення на ігровому кубику: " + move.rand1.ToString() +"\n"+move.rand2.ToString();
     }
 }

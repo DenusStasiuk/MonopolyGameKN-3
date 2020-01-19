@@ -9,7 +9,14 @@ public class ShowRandPoints : MonoBehaviour
     void Start()
     {
         p=Random.Range(-2, 2);
-        scoreUpdate.points += p;
+        if (move.nextFishka == 1)
+        {
+            scoreUpdate.wPoints+=p;
+        }
+        else if (move.nextFishka == 2)
+        {
+            scoreUpdate.bPoints+=p;
+        }
     }
     public Text points;
     public int p;

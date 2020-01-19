@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class scoreUpdate : MonoBehaviour
 {
     public Text score;
-    public static int points=0;
+    public static int wPoints=0;
+    public static int bPoints=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,6 @@ public class scoreUpdate : MonoBehaviour
     //}
     void Update()
     {
-        score.text = "Score: " + points.ToString();
+        score.text = "Бали гравця 1: " + wPoints.ToString()+"\nБали гравця 2: " +bPoints.ToString();
     }
 }
