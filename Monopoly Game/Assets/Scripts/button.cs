@@ -7,12 +7,12 @@ public class button : MonoBehaviour
     void OnMouseDown()
     {
         var t = transform.localScale;
-        transform.localScale = new Vector3(t.x + 0.2f, t.y + 0.2f, 1f);
+        transform.localScale = new Vector3(t.x + 0.1f, t.y + 0.1f, 1f);
     }
     void OnMouseUp()
     {
         var t = transform.localScale;
-        transform.localScale = new Vector3(t.x - 0.2f, t.y - 0.2f, 1f);
+        transform.localScale = new Vector3(t.x - 0.1f, t.y - 0.1f, 1f);
     }
 
     public Sprite layer;

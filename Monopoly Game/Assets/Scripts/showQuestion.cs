@@ -32,18 +32,18 @@ public class showQuestion : MonoBehaviour
         qBlue.Add(new Question(1, "Який із наведених типів даних можна використовувати із enum?", new List<string> { "Int ", "String", "Boolean" }, 0));
         qBlue.Add(new Question(1, "Яке призначення індексатору:", new List<string> { "Створює індекс для екземпляру класу.", "Дозволяє індексувати екземпляр класу, як масив.", "Дозволяє нумерувати класи." }, 1));
 
-        qRed.Add(new Question(2, "Red Java is ... programing language?", new List<string> { "OOP", "functional", "national" }, 0));
+        qRed.Add(new Question(2, "Яка типізація використовується в Python?", new List<string> { "Змішана", "Статична", "Динамічна" }, 2));
         qRed.Add(new Question(2, "Що робить наступний код?: def a(b, c, d): pass", new List<string> { "Визначає список і ініціалізує його."
             , "Визначає функцію, яка нічого не робить.", "Визначає функцію, яка передає параметри." }, 1));
         qRed.Add(new Question(2, "Що буде надруковано? name = \"snow storm\"\nprint(\"%s\" % \nname[6:8])", new List<string> { "sto", "to ", "Syntax Error" }, 1));
         qRed.Add(new Question(2, "Що буде надруковано? kvps = { \"user\", \"bill\", \"password\", \"hillary\" }\nprint(kvps['password'])", new List<string> { "user", "password", "TypeError " }, 2));
         qRed.Add(new Question(2, "Що виведе наступний код, при його виконанні? Використовується Python 3.x.\nprint(type(1 / 2))", new List<string> { "type int", "type float", "type double" }, 1));
 
-        qGreen.Add(new Question(3, "Green Java is ... programing language?", new List<string> { "OOP", "functional", "national" }, 0));
-        qGreen.Add(new Question(3, "Green Java is ... programing language?", new List<string> { "OOP", "functional", "national" }, 0));
-        qGreen.Add(new Question(3, "Green Java is ... programing language?", new List<string> { "OOP", "functional", "national" }, 0));
-        qGreen.Add(new Question(3, "Green Java is ... programing language?", new List<string> { "OOP", "functional", "national" }, 0));
-        qGreen.Add(new Question(3, "Green Java is ... programing language?", new List<string> { "OOP", "functional", "national" }, 0));
+        qGreen.Add(new Question(3, "Як розшифровується HTML?", new List<string> { "Hypertools Markup Language", "Hypertext Markup Language", "Hypertext Machine Language" }, 1));
+        qGreen.Add(new Question(3, "Котрий з вказаних атрибутів має більший пріоритет?", new List<string> { "class", "id", "обидва" }, 0));
+        qGreen.Add(new Question(3, "Який тег дозволяє вставляти зображення?", new List<string> { "img", "picture", "photo" }, 0));
+        qGreen.Add(new Question(3, "Який з тегів призначений для маркованих списків?", new List<string> { "<ul>", "<ol>", "<li>" }, 0));
+        qGreen.Add(new Question(3, "Яких тегів HTML не існує?", new List<string> { "подвійних", "потрійних", "одинарних" }, 1));
 
         qYelow.Add(new Question(4, "Java це ... мова програмування", new List<string> { "об'єктно орієнтована", "функціональна", "державна" }, 0));
         qYelow.Add(new Question(4, "Скільки класів може наслідувати клас в Java?", new List<string> { "два", "безліч", "один" }, 2));
@@ -92,38 +92,55 @@ public class showQuestion : MonoBehaviour
     {
         if(nextQuestion ==1)
         {
-            if (button == qBlue[nextB].corectAnswear) {
-                if (nextB+1 > qBlue.Count - 1) { nextB = 0; }
-                else if (nextB + 1 <= qBlue.Count - 1) { nextB++; }
+            int nxt = nextB;
+            if (nextB + 1 > qBlue.Count - 1) { nextB = 0; }
+            else if (nextB + 1 <= qBlue.Count - 1) { nextB++; }
+
+            if (button == qBlue[nxt].corectAnswear) {
+                
                 return true;
             }
+
+                
         }
         else if(nextQuestion == 2)
         {
-            if (button == qRed[nextR].corectAnswear)
+            int nxt = nextR;
+            if (nextR + 1 > qRed.Count - 1) { nextR = 0; }
+            else if (nextR + 1 <= qRed.Count - 1) { nextR++; }
+
+            if (button == qRed[nxt].corectAnswear)
             {
-                if(nextR+1 > qRed.Count - 1) { nextR = 0; }
-                else if(nextR+1 <= qRed.Count-1) { nextR++; }
+                
                 return true;
             }
+                
         }
         else if (nextQuestion == 3)
         {
-            if(button== qGreen[nextG].corectAnswear)
+            int nxt = nextG;
+            if (nextG + 1 > qGreen.Count - 1) { nextG = 0; }
+            else if (nextG + 1 <= qGreen.Count - 1) { nextG++; }
+
+            if (button== qGreen[nxt].corectAnswear)
             {
-                if(nextG+1 > qGreen.Count-1) { nextG = 0; }
-                else if(nextG+1 <= qGreen.Count-1) { nextG++; }
+                
                 return true;
             }
+            
         }
         else if (nextQuestion == 4)
         {
-            if (button == qYelow[nextY].corectAnswear)
+            int nxt = nextY;
+            if (nextY + 1 > qYelow.Count - 1) { nextY = 0; }
+            else if (nextY + 1 <= qYelow.Count - 1) { nextY++; }
+
+            if (button == qYelow[nxt].corectAnswear)
             {
-                if(nextY+1 > qYelow.Count-1) { nextY = 0; }
-                else if(nextY+1 <= qYelow.Count-1) { nextY++; }
+                
                 return true;
             }
+            
         }
         return false;
     }
