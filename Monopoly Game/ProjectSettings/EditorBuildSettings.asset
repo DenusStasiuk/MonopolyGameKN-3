@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RandomPoints.unity
     guid: c819650d58361054e91ccf44dd268a61
+  - enabled: 1
+    path: Assets/Scenes/Rules.unity
+    guid: 07a2a9037e043c34486ed995a6a08b8e
   m_configObjects: {}

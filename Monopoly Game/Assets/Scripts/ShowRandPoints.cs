@@ -8,14 +8,14 @@ public class ShowRandPoints : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        p=Random.Range(-2, 2);
+        p = Random.Range(-2, 2);
         if (move.nextFishka == 1)
         {
-            scoreUpdate.wPoints+=p;
+            scoreUpdate.wPoints += p;
         }
         else if (move.nextFishka == 2)
         {
-            scoreUpdate.bPoints+=p;
+            scoreUpdate.bPoints += p;
         }
     }
     public Text points;
@@ -24,6 +24,6 @@ public class ShowRandPoints : MonoBehaviour
 
     void Update()
     {
-        points.text = p.ToString() + " add to your points";
+        points.text ="До вашого рахунку додано "+ p.ToString() +" бал(балів)";
     }
 }

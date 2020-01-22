@@ -69,23 +69,25 @@ public class move : MonoBehaviour
 
         }
 
-
-                if (w == fields[1] || w == fields[8] || w == fields[17] || w == fields[19])
-                {
-                    showQuestion.nextQuestion = 1;
-                }
-                else if (w == fields[2] || w == fields[3] || w == fields[13] || w == fields[21])
-                {
-                    showQuestion.nextQuestion = 2;
-                }
-                else if (w == fields[5] || w == fields[7] || w == fields[10] || w == fields[16])
-                {
-                    showQuestion.nextQuestion = 3;
-                }
-                else if (w == fields[11] || w == fields[14] || w == fields[22] || w == fields[23])
-                {
-                    showQuestion.nextQuestion = 4;
-                }
+        if (nextFishka == 1)
+        {
+            if (w == fields[1] || w == fields[8] || w == fields[17] || w == fields[19])
+            {
+                showQuestion.nextQuestion = 1;
+            }
+            else if (w == fields[2] || w == fields[3] || w == fields[13] || w == fields[21])
+            {
+                showQuestion.nextQuestion = 2;
+            }
+            else if (w == fields[5] || w == fields[7] || w == fields[10] || w == fields[16])
+            {
+                showQuestion.nextQuestion = 3;
+            }
+            else if (w == fields[11] || w == fields[14] || w == fields[22] || w == fields[23])
+            {
+                showQuestion.nextQuestion = 4;
+            }
+        }
 
                 if (fishka.transform.position == w && check_move1 &&
                     (w != fields[0]
@@ -130,7 +132,8 @@ public class move : MonoBehaviour
             Debug.Log("move2_129");
         }
 
-
+        if (nextFishka == 2)
+        {
             if (b == fields[1] || b == fields[8] || b == fields[17] || b == fields[19])
             {
                 showQuestion.nextQuestion = 1;
@@ -147,6 +150,7 @@ public class move : MonoBehaviour
             {
                 showQuestion.nextQuestion = 4;
             }
+        }
 
             if (fishkaBlack.transform.position == b && check_move2 &&
                 (b != fields[0]
